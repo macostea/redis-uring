@@ -1,0 +1,18 @@
+[package]
+name = "redis-uring"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "redis-uring-server"
+path = "src/bin/server.rs"
+
+[dependencies]
+bytes = "1"
+atoi = "2.0.0"
+tokio-uring = { git = "https://github.com/tokio-rs/tokio-uring", branch = "master", features = ["bytes"]}
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1.34"
+tracing-subscriber = { version = "0.3.11", features = ["env-filter"] }
